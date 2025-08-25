@@ -1,0 +1,382 @@
+<!doctype html>
+<html lang="pl">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>King Asia Food — Fine Dining Bydgoszcz</title>
+    <meta name="description" content="King Asia Food — fine dining fusion w sercu Bydgoszczy. Menu degustacyjne, rezerwacje online, kuchnia łącząca Azję z terroir Polski.">
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              navy: '#0b1220',
+              gold: '#d4af37'
+            },
+            fontFamily: {
+              sans: ['Poppins', 'ui-sans-serif', 'system-ui'],
+              serif: ['Playfair Display', 'ui-serif', 'Georgia']
+            },
+          }
+        }
+      }
+    </script>
+    <link rel="stylesheet" href="style.css">
+    <!-- Open Graph -->
+    <meta property="og:title" content="King Asia Food — Fine Dining Bydgoszcz">
+    <meta property="og:description" content="Menu degustacyjne, rezerwacje online, kuchnia fusion z polskim terroir.">
+    <meta property="og:image" content="assets/hero.jpg">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="pl_PL">
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="King Asia Food — Fine Dining Bydgoszcz">
+    <meta name="twitter:description" content="Menu degustacyjne, rezerwacje online, kuchnia fusion z polskim terroir.">
+    <meta name="twitter:image" content="assets/hero.jpg">
+    <!-- Schema.org Restaurant -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Restaurant",
+      "name": "King Asia Food",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "ul. Gdańska 42",
+        "addressLocality": "Bydgoszcz",
+        "postalCode": "85-363",
+        "addressCountry": "PL"
+      },
+      "telephone": "+48 45 123 45 67",
+      "email": "rezerwacje@kingasiafood.pl",
+      "url": "https://kingasiafood.pl",
+      "servesCuisine": ["Asian", "Fusion", "Polish"],
+      "priceRange": "$$$",
+      "image": ["assets/hero.jpg","assets/dish1.jpg","assets/dish2.jpg"],
+      "acceptsReservations": "True",
+      "menu": "https://kingasiafood.pl/#menu",
+      "sameAs": ["https://instagram.com/kingasiafood","https://facebook.com/kingasiafood"],
+      "openingHoursSpecification": [{
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+        "opens": "12:00",
+        "closes": "24:00"
+      }]
+    }
+    </script>
+  </head>
+  <body class="bg-navy text-white selection:bg-gold/30">
+    <!-- Skip link -->
+    <a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 bg-white text-navy px-3 py-2 rounded">Pomiń do treści głównej</a>
+
+    <!-- NAVBAR -->
+    <header class="fixed top-0 left-0 right-0 z-50 backdrop-blur border-b border-white/10 bg-navy/70">
+      <div class="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between">
+        <a href="#" class="flex items-center gap-3" aria-label="Strona główna King Asia Food">
+          <img src="logo.png" alt="King Asia Food logo" class="w-8 h-8 rounded">
+          <span class="font-serif text-xl tracking-wide">King <span class="text-gold">Asia</span> Food</span>
+        </a>
+        <nav id="nav" class="hidden md:flex gap-8 text-sm">
+          <a href="#menu" class="hover:text-gold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold/60 rounded">Menu</a>
+          <a href="#tasting" class="hover:text-gold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold/60 rounded">Menu degustacyjne</a>
+          <a href="#chef" class="hover:text-gold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold/60 rounded">Szef kuchni</a>
+          <a href="#gallery" class="hover:text-gold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold/60 rounded">Galeria</a>
+          <a href="#reservations" class="hover:text-gold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold/60 rounded">Rezerwacje</a>
+          <a href="#contact" class="hover:text-gold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold/60 rounded">Kontakt</a>
+        </nav>
+        <button id="mobile-btn" class="md:hidden p-2 rounded border border-white/10 hover:bg-white/5" aria-label="Otwórz menu">
+          <span class="sr-only">Menu</span>
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+        </button>
+      </div>
+      <div id="mobile-nav" class="md:hidden hidden border-t border-white/10 bg-navy/95">
+        <div class="max-w-7xl mx-auto px-4 py-3 grid gap-3 text-sm">
+          <a href="#menu" class="py-2 border-b border-white/5">Menu</a>
+          <a href="#tasting" class="py-2 border-b border-white/5">Menu degustacyjne</a>
+          <a href="#chef" class="py-2 border-b border-white/5">Szef kuchni</a>
+          <a href="#gallery" class="py-2 border-b border-white/5">Galeria</a>
+          <a href="#reservations" class="py-2 border-b border-white/5">Rezerwacje</a>
+          <a href="#contact" class="py-2">Kontakt</a>
+        </div>
+      </div>
+    </header>
+
+    <main id="main" class="pt-16">
+      <!-- HERO -->
+      <section class="relative">
+        <img src="wewnatrz.png" class="w-full h-[70vh] object-cover opacity-70" alt="Wnętrze King Asia Food — eleganckie, mroczne tonacje" loading="eager">
+        <div class="absolute inset-0 bg-gradient-to-t from-navy via-navy/30 to-transparent"></div>
+        <div class="absolute inset-0 max-w-7xl mx-auto px-4 flex items-end pb-12">
+          <div class="max-w-3xl">
+            <h1 class="font-serif text-5xl md:text-6xl leading-tight">Fine dining z azjatyckim sercem<br><span class="text-gold">w Bydgoszczy</span></h1>
+            <p class="mt-4 text-white/80 text-lg">Degustacyjne doświadczenie, które łączy fermenty, ogień i polskie terroir z odważnymi technikami Azji.</p>
+            <div class="mt-8 flex flex-wrap gap-3">
+              <a href="#reservations" class="inline-flex items-center justify-center px-5 py-3 bg-gold text-navy font-medium rounded hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold/60" aria-label="Przejdź do rezerwacji stolika">Zarezerwuj stolik</a>
+              <a href="#tasting" class="inline-flex items-center justify-center px-5 py-3 border border-gold/60 text-gold font-medium rounded hover:bg-gold/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold/60" aria-label="Poznaj menu degustacyjne">Poznaj menu degustacyjne</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- BADGES / USP -->
+      <section class="py-10 border-b border-white/10 bg-white/5">
+        <div class="max-w-7xl mx-auto px-4 grid grid-cols-2 md:grid-cols-4 gap-4 text-center text-sm">
+          <div class="p-4 bg-white/5 rounded">Menu degustacyjne od <span class="text-gold font-semibold">200&nbsp;PLN</span> / os.</div>
+          <div class="p-4 bg-white/5 rounded">Wine pairing • fermenty • ogień</div>
+          <div class="p-4 bg-white/5 rounded">Godziny: <span class="text-gold font-semibold">12:00–24:00</span></div>
+          <div class="p-4 bg-white/5 rounded">Rezerwacje online • tel • WhatsApp</div>
+        </div>
+      </section>
+
+      <!-- TASTING MENU -->
+      <section id="tasting" class="py-16">
+        <div class="max-w-7xl mx-auto px-4">
+          <div class="flex items-end justify-between gap-4 flex-wrap">
+            <h2 class="font-serif text-4xl">Menu degustacyjne</h2>
+            <div class="text-right">
+              <div class="text-white/80 text-sm">Cena za osobę</div>
+              <div class="text-gold text-2xl font-semibold">200 PLN</div>
+              <div class="text-white/60 text-sm">Wine pairing: +120 PLN</div>
+            </div>
+          </div>
+          <ol class="mt-8 grid md:grid-cols-2 gap-6">
+            <li class="p-5 rounded border border-white/10 bg-white/5 fade">
+              <h3 class="font-serif text-2xl">Amuse-bouche — <span class="text-gold">kimchi & dashi</span></h3>
+              <p class="text-white/75 mt-2">Jedno ugryzienie, które otwiera kubki smakowe fermentem i umami.</p>
+            </li>
+            <li class="p-5 rounded border border-white/10 bg-white/5 fade">
+              <h3 class="font-serif text-2xl">Ostryga / jabłko / yuzu</h3>
+              <p class="text-white/75 mt-2">Chłodna mineralność przełamana polskim jabłkiem i cytrusowym yuzu.</p>
+            </li>
+            <li class="p-5 rounded border border-white/10 bg-white/5 fade">
+              <h3 class="font-serif text-2xl">Tatar wołowy / miso / szczypior</h3>
+              <p class="text-white/75 mt-2">Polski tatar wzbogacony pastą miso i chrupkim szczypiorem.</p>
+            </li>
+            <li class="p-5 rounded border border-white/10 bg-white/5 fade">
+              <h3 class="font-serif text-2xl">Dyniowy ramen / pierogi / shiitake</h3>
+              <p class="text-white/75 mt-2">Aromatyczny bulion z pierogiem jako ukłon w stronę kuchni domowej.</p>
+            </li>
+            <li class="p-5 rounded border border-white/10 bg-white/5 fade">
+              <h3 class="font-serif text-2xl">Sandacz / koper / maślanka</h3>
+              <p class="text-white/75 mt-2">Delikatna ryba, kwaśna maślanka i świeży koper.</p>
+            </li>
+            <li class="p-5 rounded border border-white/10 bg-white/5 fade">
+              <h3 class="font-serif text-2xl">Kaczka / śliwka / pięć smaków</h3>
+              <p class="text-white/75 mt-2">Soczysta pierś z kaczką glazurowaną przyprawą pięciu smaków.</p>
+            </li>
+            <li class="p-5 rounded border border-white/10 bg-white/5 fade">
+              <h3 class="font-serif text-2xl">Pre-dessert — sorbet z rokitnika</h3>
+              <p class="text-white/75 mt-2">Orzeźwiający przystanek przed finalem.</p>
+            </li>
+            <li class="p-5 rounded border border-white/10 bg-white/5 fade">
+              <h3 class="font-serif text-2xl">Mak / sezam / miód gryczany</h3>
+              <p class="text-white/75 mt-2">Słodkie zakończenie o nutach Polski i Azji.</p>
+            </li>
+          </ol>
+          <div class="mt-8">
+            <a href="#reservations" class="inline-flex px-5 py-3 bg-gold text-navy rounded font-medium hover:opacity-90">Zarezerwuj degustację</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- A LA CARTE -->
+      <section id="menu" class="py-16 border-t border-white/10 bg-white/[0.03]">
+        <div class="max-w-7xl mx-auto px-4">
+          <h2 class="font-serif text-4xl">À la carte</h2>
+          <div class="mt-8 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- sample items -->
+            <article class="p-5 rounded border border-white/10 bg-white/5 hover:border-gold/40 transition group fade">
+              <img src="BWO.png" alt="Bao z wieprzowiną i ogórkiem" class="rounded mb-3 w-full h-44 object-cover" loading="lazy">
+              <div class="flex items-center justify-between">
+                <h3 class="font-serif text-2xl">Bao • wieprzowina • ogórek</h3>
+                <span class="text-gold font-medium">46 PLN</span>
+              </div>
+              <p class="text-white/70 mt-2">Miękkie bao, piklowany ogórek, sezam, sos hoisin.</p>
+            </article>
+            <article class="p-5 rounded border border-white/10 bg-white/5 hover:border-gold/40 transition group fade">
+              <img src="TTM.png" alt="Tatar z tuńczyka z miso i sezamem" class="rounded mb-3 w-full h-44 object-cover" loading="lazy">
+              <div class="flex items-center justify-between">
+                <h3 class="font-serif text-2xl">Tatar • tuńczyk • miso</h3>
+                <span class="text-gold font-medium">64 PLN</span>
+              </div>
+              <p class="text-white/70 mt-2">Kremowe miso, chrupiący sezam, ostrość shichimi.</p>
+            </article>
+            <article class="p-5 rounded border border-white/10 bg-white/5 hover:border-gold/40 transition group fade">
+              <img src="RDS.png" alt="Ramen dyniowy z shiitake i pierogiem" class="rounded mb-3 w-full h-44 object-cover" loading="lazy">
+              <div class="flex items-center justify-between">
+                <h3 class="font-serif text-2xl">Ramen • dynia • shiitake</h3>
+                <span class="text-gold font-medium">58 PLN</span>
+              </div>
+              <p class="text-white/70 mt-2">Bulion dashi, olej chili, pieróg w roli makaronu.</p>
+            </article>
+            <article class="p-5 rounded border border-white/10 bg-white/5 hover:border-gold/40 transition group fade">
+              <img src="SKM.png" alt="Sandacz z koprem i maślanką" class="rounded mb-3 w-full h-44 object-cover" loading="lazy">
+              <div class="flex items-center justify-between">
+                <h3 class="font-serif text-2xl">Sandacz • koper • maślanka</h3>
+                <span class="text-gold font-medium">92 PLN</span>
+              </div>
+              <p class="text-white/70 mt-2">Delikatne filety, zielony olej koperkowy, kwaśna nuta.</p>
+            </article>
+            <article class="p-5 rounded border border-white/10 bg-white/5 hover:border-gold/40 transition group fade">
+              <img src="KPS.png" alt="Kaczka w pięciu smakach ze śliwką" class="rounded mb-3 w-full h-44 object-cover" loading="lazy">
+              <div class="flex items-center justify-between">
+                <h3 class="font-serif text-2xl">Kaczka • pięć smaków • śliwka</h3>
+                <span class="text-gold font-medium">98 PLN</span>
+              </div>
+              <p class="text-white/70 mt-2">Glazura 5-spice, sos śliwkowy, pieczony por.</p>
+            </article>
+            <article class="p-5 rounded border border-white/10 bg-white/5 hover:border-gold/40 transition group fade">
+              <img src="MSM.png" alt="Deser makowy z sezamem i miodem gryczanym" class="rounded mb-3 w-full h-44 object-cover" loading="lazy">
+              <div class="flex items-center justify-between">
+                <h3 class="font-serif text-2xl">Mak • sezam • miód</h3>
+                <span class="text-gold font-medium">42 PLN</span>
+              </div>
+              <p class="text-white/70 mt-2">Aksamitny krem, prażony sezam, miód gryczany.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- CHEF -->
+      <section id="chef" class="py-16">
+        <div class="max-w-7xl mx-auto px-4 grid md:grid-cols-2 gap-10 items-center">
+          <img src="chef1.png" alt="Szef kuchni King Asia Food" class="rounded-lg border border-white/10 w-full h-[28rem] object-cover fade" loading="lazy">
+          <div>
+            <h2 class="font-serif text-4xl">Szef kuchni</h2>
+            <p class="text-white/80 mt-4 leading-relaxed">
+              Nasza kuchnia łączy rzemiosło fermentacji, techniki Azji oraz produkty od polskich dostawców.
+              Filozofia: sezonowość, ogień, umami — i pełen szacunek do natury.
+            </p>
+            <p class="text-white/70 mt-3">
+              Manifest: „Gotujemy z atencją i odwagą. W każdym daniu szukamy równowagi między ciepłem ognia a świeżością fermentów.”
+            </p>
+            <a href="#tasting" class="inline-block mt-6 px-5 py-3 border border-gold/60 text-gold rounded hover:bg-gold/10">Zobacz menu degustacyjne</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- GALLERY -->
+      <section id="gallery" class="py-16 border-t border-white/10 bg-white/[0.03]">
+        <div class="max-w-7xl mx-auto px-4">
+          <h2 class="font-serif text-4xl">Galeria</h2>
+          <div class="mt-8 grid md:grid-cols-3 gap-6">
+            <img src="sala.png" alt="Wnętrze restauracji — sala główna" class="rounded-lg border border-white/10 w-full h-64 object-cover fade" loading="lazy">
+            <img src="detale.png" alt="Wnętrze restauracji — detale" class="rounded-lg border border-white/10 w-full h-64 object-cover fade" loading="lazy">
+            <img src="szwid.png" alt="Stolik z winem i daniem" class="rounded-lg border border-white/10 w-full h-64 object-cover fade" loading="lazy">
+          </div>
+        </div>
+      </section>
+
+      <!-- RESERVATIONS -->
+      <section id="reservations" class="py-16">
+        <div class="max-w-7xl mx-auto px-4 grid lg:grid-cols-2 gap-10 items-start">
+          <div>
+            <h2 class="font-serif text-4xl">Rezerwacje</h2>
+            <p class="text-white/80 mt-3">Wypełnij formularz — potwierdzimy SMS-em i e-mailem. Alternatywnie: tel. <a class="text-gold underline" href="tel:+48451234567">+48 45 123 45 67</a> lub WhatsApp.</p>
+            <ul class="mt-4 space-y-2 text-white/70 text-sm">
+              <li>• Godziny otwarcia: <span class="text-white">12:00–24:00</span> (7 dni w tygodniu)</li>
+              <li>• Alergeny: pełna lista dostępna na miejscu. Poinformuj nas w uwagach.</li>
+              <li>• Dress code: smart casual.</li>
+            </ul>
+          </div>
+          <form id="reserve-form" class="p-5 rounded border border-white/10 bg-white/5 grid sm:grid-cols-2 gap-4" aria-label="Formularz rezerwacji stolika">
+            <div class="sm:col-span-2">
+              <label class="text-sm text-white/80">Imię i nazwisko</label>
+              <input type="text" name="name" required class="mt-1 w-full bg-navy border border-white/15 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-gold/60" aria-required="true">
+            </div>
+            <div>
+              <label class="text-sm text-white/80">Telefon</label>
+              <input type="tel" name="phone" required class="mt-1 w-full bg-navy border border-white/15 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-gold/60" aria-required="true">
+            </div>
+            <div>
+              <label class="text-sm text-white/80">E-mail</label>
+              <input type="email" name="email" required class="mt-1 w-full bg-navy border border-white/15 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-gold/60" aria-required="true">
+            </div>
+            <div>
+              <label class="text-sm text-white/80">Data</label>
+              <input type="date" name="date" required class="mt-1 w-full bg-navy border border-white/15 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-gold/60" aria-required="true">
+            </div>
+            <div>
+              <label class="text-sm text-white/80">Godzina</label>
+              <input type="time" name="time" required class="mt-1 w-full bg-navy border border-white/15 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-gold/60" aria-required="true">
+            </div>
+            <div class="sm:col-span-2">
+              <label class="text-sm text-white/80">Liczba osób</label>
+              <input type="number" min="1" max="10" name="guests" required value="2" class="mt-1 w-full bg-navy border border-white/15 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-gold/60" aria-required="true">
+            </div>
+            <div class="sm:col-span-2">
+              <label class="text-sm text-white/80">Uwagi (alergie, okazja)</label>
+              <textarea name="notes" rows="4" class="mt-1 w-full bg-navy border border-white/15 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-gold/60"></textarea>
+            </div>
+            <!-- Honeypot -->
+            <input type="text" name="company" class="hidden" tabindex="-1" autocomplete="off">
+            <div class="sm:col-span-2 flex items-center justify-between">
+              <p class="text-xs text-white/60">Klikając „Wyślij”, akceptujesz politykę prywatności.</p>
+              <button type="submit" class="px-5 py-3 bg-gold text-navy rounded font-medium hover:opacity-90">Wyślij</button>
+            </div>
+            <p id="reserve-ok" class="hidden text-emerald-300 text-sm sm:col-span-2">Dziękujemy! Wkrótce potwierdzimy rezerwację.</p>
+            <p id="reserve-err" class="hidden text-red-300 text-sm sm:col-span-2">Ups, sprawdź pola i spróbuj ponownie.</p>
+          </form>
+        </div>
+      </section>
+
+      <!-- CONTACT + MAP -->
+      <section id="contact" class="py-16 border-t border-white/10 bg-white/[0.03]">
+        <div class="max-w-7xl mx-auto px-4 grid lg:grid-cols-2 gap-10 items-start">
+          <div>
+            <h2 class="font-serif text-4xl">Kontakt</h2>
+            <div class="mt-6 grid sm:grid-cols-2 gap-4 text-white/80">
+              <div class="p-4 rounded bg-white/5 border border-white/10"><div class="text-white/60 text-sm">Telefon</div><a href="tel:+48451234567" class="text-gold font-medium">+48 22 123 45 67</a></div>
+              <div class="p-4 rounded bg-white/5 border border-white/10"><div class="text-white/60 text-sm">E-mail</div><a href="mailto:rezerwacje@kingasiafood.pl" class="text-gold font-medium">rezerwacje@kingasiafood.pl</a></div>
+              <div class="p-4 rounded bg-white/5 border border-white/10"><div class="text-white/60 text-sm">Adres</div><div>ul. Gdańska 42, 85-022 Bydgoszcz</div></div>
+              <div class="p-4 rounded bg-white/5 border border-white/10"><div class="text-white/60 text-sm">Godziny</div><div>Codziennie 12:00–24:00</div></div>
+            </div>
+            <div class="mt-6 flex gap-3">
+              <a href="#reservations" class="px-5 py-3 bg-gold text-navy rounded font-medium hover:opacity-90" aria-label="Przejdź do rezerwacji">Rezerwuj</a>
+              <a href="https://wa.me/48451234567" class="px-5 py-3 border border-gold/60 text-gold rounded hover:bg-gold/10" aria-label="Wyślij wiadomość WhatsApp">WhatsApp</a>
+            </div>
+          </div>
+     <div class="relative rounded overflow-hidden border border-white/10 h-[360px] md:h-[480px]">
+  <iframe
+    title="Mapa dojazdu – King Asia Food"
+    class="absolute inset-0 w-full h-full"
+    loading="lazy"
+    referrerpolicy="no-referrer-when-downgrade"
+    style="border:0"
+    allowfullscreen
+    src="https://www.google.com/maps?q=Gda%C5%84ska%2042%2C%2085-022%20Bydgoszcz&output=embed">
+  </iframe>
+</div>
+        </div>
+      </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="py-10 border-t border-white/10">
+      <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-4 text-white/70 text-sm">
+        <p>© <span id="year"></span> King Asia Food. Wszelkie prawa zastrzeżone.</p>
+        <div class="flex items-center gap-4">
+          <a href="#" class="hover:text-gold">Polityka prywatności</a>
+          <a href="#" class="hover:text-gold">Regulamin</a>
+          <a href="https://instagram.com/kingasiafood" class="hover:text-gold">Instagram</a>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Sticky CTA -->
+    <div class="fixed bottom-5 right-5 z-40">
+      <a href="#reservations" class="px-5 py-3 bg-gold text-navy rounded shadow-lg font-medium hover:opacity-90" aria-label="Przejdź do rezerwacji">Zarezerwuj stolik</a>
+    </div>
+
+    <script src="script.js" defer></script>
+  </body>
+</html>
