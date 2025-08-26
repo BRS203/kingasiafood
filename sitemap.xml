@@ -1,0 +1,7 @@
+<!-- ============================== sitemap.xml ============================== -->
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://twojadomena/</loc></url>
+  <url><loc>https://twojadomena/polityka.html</loc></url>
+  <url><loc>https://twojadomena/regulamin.html</loc></url>
+</urlset>
